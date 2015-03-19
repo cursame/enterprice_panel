@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Panel</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/highcharts.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Panel de administación de Cúrsame</a>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col-xs-4 panel panel-default" style="height:420px; margin-left:30px;">
+				<center>
+				<a class="twitter-timeline" href="https://twitter.com/search?q=cursame" data-widget-id="574989712751919104" data-chrome="nofooter transparent" >@cursame</a>
+				</center>
+			</div>
+			<div class="col-xs-4 panel panel-default" style="height:420px; margin-left:10px;">
+				<h4><b>Ultimos tickets</b></h4>
+				<ul class="list-group">
+					<% @tickets.reverse.each do |ticket| %>
+					<li class=" list-group-item <%=  'list-group-item-success' if ticket.attributes.status == 'open' %> <%=  'list-group-item-warning' if ticket.attributes.status == 'pending'   %>  <%=  'list-group-item-danger' if ticket.attributes.status == 'new'   %> <%=  'list-group-item-info' if ticket.attributes.status == 'solved'   %>">
+						<div class="row">
+							<div class="col-xs-9">
+								<%= ticket.attributes.raw_subject %>
+								<%= ticket.attributes.updated_at %>
+							</div>
+							<div class="col-xs-2">
+								<span class="badge">
+									<%= ticket.attributes.status %>
+								</span>
+							</div>
+						</div>
+					</li>
+					<%end%>
+				</ul>
+			</div>
+			<div class="col-xs-3 panel panel-default" style="height:420px; margin-left:10px;">
+				<center>
+				<div id="fb-root"></div>
+				<div width="340px;"class="fb-like-box" data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+				</center>
+			</div>
+			<div class="col-xs-11 panel panel-default" style="height:620px; margin-left:45px;">
+				<div id="chartx"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&appId=591085827637853&version=v2.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+$(function () {
+TimeChart(<%= @single_date %>, <%=@mix%>, 'chartx');
+});
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
