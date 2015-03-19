@@ -1,7 +1,7 @@
 ########## home controller to define and active panell ########
 require './appcontrollers/zendesk'
 require './appcontrollers/mixpanel'
-
+puts "home controller"
 get '/' do 
    @tickets = $zendesk.tickets.recent
    mix_loggins_conplex = []
