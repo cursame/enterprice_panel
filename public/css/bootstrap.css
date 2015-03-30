@@ -11,6 +11,7 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
+  font-weight: lighter;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -4163,6 +4164,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 18px;
   line-height: 20px;
   height: 50px;
+  
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4188,7 +4190,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
+
 .navbar-toggle:focus {
   outline: 0;
 }
@@ -6286,7 +6288,7 @@ button.close {
 .btn-group-vertical > .btn-group:after,
 .nav:before,
 .nav:after,
-.navbar:before,
+.r:before,
 .navbar:after,
 .navbar-header:before,
 .navbar-header:after,
