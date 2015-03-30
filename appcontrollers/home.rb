@@ -14,6 +14,6 @@ get '/' do
      end
    @single_date = mix_series
    @mix = mix_loggins_conplex
-   puts "<><><><><><><><><<<<<<<<<< render panel.haml"
-   haml :panel
+   puts "<><><><><><><><><<<<<<<<<< render panel.erb"
+   erb :panel
 end
