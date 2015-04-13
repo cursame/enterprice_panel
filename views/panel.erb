@@ -8,56 +8,70 @@
 		<script type="text/javascript" src="js/highcharts.js"></script>
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="../css/Cursame_Style.css">
+		<link rel="stylesheet" href="../css/global.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
 					<div class="logo">
 						<img src="img/mainlogo_color.png" alt="">
 					</div>	
-					<a class="navbar-brand" href="#">Panel de administación de Cúrsame</a>
+					<div class="main-title">
+					<a class="navbar-brand color-title" href="#"><b>Panel de administación</b></a>
+					</div>
 				</div>
 			</div>
 		</nav>
 		<div class="row">
-			<div class="col-xs-4 panel panel-default" style="height:420px; margin-left:10px;">
-				<h4><b>Ultimos tickets</b></h4>
-				<ul class="list-group">
-					<% @tickets.reverse.each do |ticket| %>
-					<li class=" list-group-item <%=  'list-group-item-success' if ticket.attributes.status == 'open' %> <%=  'list-group-item-warning' if ticket.attributes.status == 'pending'   %>  <%=  'list-group-item-danger' if ticket.attributes.status == 'new'   %> <%=  'list-group-item-info' if ticket.attributes.status == 'solved'   %>">
-						<div class="row">
-							<div class="col-xs-9">
-								<%= ticket.attributes.raw_subject %>
-								<%= ticket.attributes.updated_at %>
-							</div>
-							<div class="col-xs-2">
-								<span class="badge">
-									<%= ticket.attributes.status %>
-								</span>
-							</div>
-						</div>
-					</li>
-					<%end%>
-				</ul>
+		<!--Ultimos tickets-->
+			<div class="col-xs-5 panel panel-default padding-tickets " style="margin-left:20px;">
+			<p class="color-panel">
+			<img src="../img/logo-tickets.png" class="img-tickets" alt="tickets" >
+				<b>Ultimos tickets</b>
+				</p>
+					<ul class="list-group ">
+							<% @tickets.reverse.each do |ticket| %>
+							<li class=" list-group-item  <%=  'list-group-item-success' if ticket.attributes.status == 'open' %> <%=  'list-group-item-warning' if ticket.attributes.status == 'pending'   %>  <%=  'list-group-item-danger' if ticket.attributes.status == 'new'   %> <%=  'list-group-item-info' if ticket.attributes.status == 'solved'   %>">
+								<div class="row">
+									<div class="col-xs-9">
+									<%= ticket.attributes.raw_subject %>
+									<%= ticket.attributes.updated_at %>
+									</div>
+									<div class="col-xs-2">
+										<span class="badge">
+											<%= ticket.attributes.status %>
+										</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+				<%end%>
 			</div>
-			<div class="col-xs-3 panel panel-default" style="height:420px; margin-left:10px;">
-				<div id="fb-root"></div>
-				<div width="340px;"class="fb-like-box" data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+			<!--Facebook-->
+			<div class="col-xs-3 panel panel-default padding-facebook " style=" margin-left:20px; width:468px; height:430px;">
+				<p class="color-panel-fb ">
+					<img src="../img/FB-f-Logo__blue_72.png" class="logo-facebook" alt="facebook">
+					<b>Publicaciones</b>
+				</p> 
+					<div class="fb-like-box"  data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
 			</div>
-			<div class="col-xs-4 panel panel-default" style="height:420px; margin-left:30px;">
-				<a class="twitter-timeline" href="https://twitter.com/search?q=cursame" data-widget-id="574989712751919104" data-chrome="nofooter transparent" >@cursame</a>
+			<!--Twitter-->
+			<div class="col-xs-4 panel panel-default padding-twitter" style=" width:468px; height:430px; margin-left:20px;">
+				<div class="margin-twitter">
+					<a class="twitter-timeline" href="https://twitter.com/search?q=cursame" data-widget-id="574989712751919104" data-chrome="nofooter transparent" >@cursame</a>
+				</div>	
 			</div>
-			<div class="col-xs-11 panel panel-default" style="height:620px; margin-left:45px;">
-				<div id="chartx"></div>
+			<!--Panel graph-->
+			<div class="col-xs-12 panel panel-default  padding-graph" style="margin-left:20px;">
+				<p class="color-panel-graph">	
+				<img src="../img/logins.png" class="img-login" alt="graph">		
+				<b>Logins</b>
+				</p>
+				<div id="chartx" ></div>
+
+				
 			</div>
 		</div>
 	</body>

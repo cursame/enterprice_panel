@@ -1,8 +1,144 @@
+body{
+background-color: #eaeaea !important;
+
+}
+
 .logo {
   float: left;
+  width: 120px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right:0; 
 }
 
 a {
   float: left;
   color: blue;
 }
+
+.main-title {
+	margin:0;
+	float:right;
+	margin-left:5px;
+	margin-top:5px; 
+	margin-bottom:0;
+	
+}
+
+.color-title{
+	color:#56B2ED !important; 
+	width:310px;
+	font-size: 25px; 
+	font-weight:lighter;
+
+
+}
+
+.color-panel{
+	background-color:#F4A460;
+	height:47px;
+	margin-top:0 !important;
+	padding-top:0 !important;
+	margin-bottom: 5px !important;
+	color:#FFFFFF;
+	font-size:1.2em;
+
+}
+
+
+.color-panel-fb{
+	background-color:#3b5998;
+	height:47px;
+	padding-top:10px;
+	color: #FFFFFF;
+	font-size:1.2em; 
+	margin-bottom:-7px !important;
+
+
+}
+
+
+.margin-twitter{
+
+	
+	margin-left:30px;
+	margin-top:30px;
+}
+
+
+
+.color-panel-graph{
+	background-color: #A3D1FF;
+	height:50px;
+	color:#FFFFFF;
+	font-size:1.2em;
+	padding-top:5px; 
+
+
+}
+
+#chartx{
+	padding-left:15px !important;
+	margin-top:0 !important; 
+	height:530px;
+	width: 1700px;
+	color: #FFFFFF;
+
+}
+
+.fb-like-box{
+
+	margin-top:0px; 
+	margin-left:80px;
+	margin-right:42px;  
+}
+
+.padding-tickets, .padding-facebook, .padding-graph{
+
+	padding-left:0 !important; 
+	padding-right:0 !important;
+
+}
+
+
+.img-tickets{
+ 	margin-left:15px; 
+	margin-bottom:10px; 
+}
+
+.img-login{
+	margin-left:10px;
+	margin-top:10px; 
+	width:23px;
+ 	height:37px;
+ 	padding-bottom:10px; 
+}
+
+.logo-facebook{
+	width:30px;
+	height:30px;
+	margin-left:10px;
+	padding-bottom:5px; 
+}
+
+
+
+
+
+/*.list-group-item-success{
+	background-color:#DFF0D8;
+	width:1px;
+	height:10px !important;
+
+}
+
+.list-group-item-warning{
+width:1px;
+	height:10px !important;
+}
+.list-group-item-danger{
+width:1px;
+	height:10px !important;
+
+}*/
