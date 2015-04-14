@@ -126,19 +126,31 @@ a {
 
 
 
-/*.list-group-item-success{
-	background-color:#DFF0D8;
-	width:1px;
-	height:10px !important;
+.b-success{
+	border:solid 1px #fff;
+	border-left:solid 12px #04B45F !important;
+	color: #29EA8D;
+	margin-bottom:2px !important;
+}
+.b-warning{
+	border:solid 1px #fff;
+	border-left:solid 12px #EAD029 !important;
+	color: #8a6d3b;
+    margin-bottom:2px !important;
+
+}
+.b-danger{
+    border:solid 1px #fff;
+	border-left:solid 12px #FF0040 !important;
+	color: #BD2047;
+    margin-bottom:2px !important;
+
+}
+.b-info{
+	border:solid 1px #fff;
+	border-left:solid 12px #29ADEA !important;
+	color: #31708f;
+    margin-bottom:2px !important;
 
 }
 
-.list-group-item-warning{
-width:1px;
-	height:10px !important;
-}
-.list-group-item-danger{
-width:1px;
-	height:10px !important;
-
-}*/

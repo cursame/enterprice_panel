@@ -17,60 +17,54 @@
 				<div class="navbar-header">
 					<div class="logo">
 						<img src="img/mainlogo_color.png" alt="">
-					</div>	
+					</div>
 					<div class="main-title">
-					<a class="navbar-brand color-title" href="#"><b>Panel de administación</b></a>
+						<a class="navbar-brand color-title" href="#"><b>Panel de administación</b></a>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<div class="row">
-		<!--Ultimos tickets-->
+			<!--Ultimos tickets-->
 			<div class="col-xs-5 panel panel-default padding-tickets " style="margin-left:20px;">
-			<p class="color-panel">
-			<img src="../img/logo-tickets.png" class="img-tickets" alt="tickets" >
-				<b>Ultimos tickets</b>
+				<p class="color-panel">
+					<img src="../img/logo-tickets.png" class="img-tickets" alt="tickets" >
+					<b>Ultimos tickets</b>
 				</p>
-					<ul class="list-group ">
-							<% @tickets.reverse.each do |ticket| %>
-							<li class=" list-group-item  <%=  'list-group-item-success' if ticket.attributes.status == 'open' %> <%=  'list-group-item-warning' if ticket.attributes.status == 'pending'   %>  <%=  'list-group-item-danger' if ticket.attributes.status == 'new'   %> <%=  'list-group-item-info' if ticket.attributes.status == 'solved'   %>">
-								<div class="row">
-									<div class="col-xs-9">
-									<%= ticket.attributes.raw_subject %>
-									<%= ticket.attributes.updated_at %>
-									</div>
-									<div class="col-xs-2">
-										<span class="badge">
-											<%= ticket.attributes.status %>
-										</span>
-									</div>
-								</div>
-							</li>
-						</ul>
-				<%end%>
+				<ul class="list-group  col-xs-12">
+					<% @tickets.reverse.each do |ticket| %>
+					<li class=" list-group-item  <%=  'b-success' if ticket.attributes.status == 'open' %> <%=  'b-warning' if ticket.attributes.status == 'pending'   %>  <%=  'b-danger' if ticket.attributes.status == 'new'   %> <%=  'b-info' if ticket.attributes.status == 'solved'   %> ">
+						<div class="row">
+							<div class="col-xs-9">
+								<%= ticket.attributes.raw_subject %>
+								<%= ticket.attributes.updated_at %>
+							</div>
+						</div>
+					</li>
+					<%end%>
+				</ul>
 			</div>
 			<!--Facebook-->
 			<div class="col-xs-3 panel panel-default padding-facebook " style=" margin-left:20px; width:468px; height:430px;">
 				<p class="color-panel-fb ">
 					<img src="../img/FB-f-Logo__blue_72.png" class="logo-facebook" alt="facebook">
 					<b>Publicaciones</b>
-				</p> 
-					<div class="fb-like-box"  data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+				</p>
+				<div class="fb-like-box"  data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
 			</div>
 			<!--Twitter-->
 			<div class="col-xs-4 panel panel-default padding-twitter" style=" width:468px; height:430px; margin-left:20px;">
 				<div class="margin-twitter">
 					<a class="twitter-timeline" href="https://twitter.com/search?q=cursame" data-widget-id="574989712751919104" data-chrome="nofooter transparent" >@cursame</a>
-				</div>	
+				</div>
 			</div>
 			<!--Panel graph-->
 			<div class="col-xs-12 panel panel-default  padding-graph" style="margin-left:20px;">
-				<p class="color-panel-graph">	
-				<img src="../img/logins.png" class="img-login" alt="graph">		
-				<b>Logins</b>
+				<p class="color-panel-graph">
+					<img src="../img/logins.png" class="img-login" alt="graph">
+					<b>Logins</b>
 				</p>
 				<div id="chartx" ></div>
-
 				
 			</div>
 		</div>
