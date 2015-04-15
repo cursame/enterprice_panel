@@ -1,0 +1,16 @@
+<p class="color-panel">
+	<img src="../img/logo-tickets.png" class="img-tickets" alt="tickets" >
+	<b>Ultimos tickets</b>
+</p>
+<ul class="list-group  col-xs-12">
+	<% @tickets.reverse.each do |ticket| %>
+	<li class=" list-group-item  <%=  'b-success' if ticket.attributes.status == 'open' %> <%=  'b-warning' if ticket.attributes.status == 'pending'   %>  <%=  'b-danger' if ticket.attributes.status == 'new'   %> <%=  'b-info' if ticket.attributes.status == 'solved'   %> ">
+		<div class="row">
+			<div class="col-xs-11">
+				<%= ticket.attributes.raw_subject %>
+				<%= ticket.attributes.updated_at %>
+			</div>
+		</div>
+	</li>
+	<%end%>
+</ul>

@@ -10,53 +10,40 @@
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="../css/global.css">
 	</head>
+	<% if !@notice.blank? %>
+	<div id="notice" class="alert alert-success h4 " style=" height:50px; margin-top:0px !important; margin-bottom:0px !important; ">
+		<center>
+		<%= @notice  if defined? @notice %>
+		</center>
+	</div>
+	<%end%>
 	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<div class="logo">
+					<div class="logo  pull-left">
 						<img src="img/mainlogo_color.png" alt="">
 					</div>
-					<div class="main-title">
+					<div class="main-title pull-left">
 						<a class="navbar-brand color-title" href="#"><b>Panel de administación</b></a>
 					</div>
 				</div>
+				<a class="btn btn-success pull-right" style="margin-top:5px;" data-toggle="modal" data-target="#myModal" >Registro de entrada</a>
 			</div>
 		</nav>
-		<div class="row">
+		<div class="row cols-xs-12">
 			<!--Ultimos tickets-->
-			<div class="col-xs-5 panel panel-default padding-tickets " style="margin-left:20px;">
-				<p class="color-panel">
-					<img src="../img/logo-tickets.png" class="img-tickets" alt="tickets" >
-					<b>Ultimos tickets</b>
-				</p>
-				<ul class="list-group  col-xs-12">
-					<% @tickets.reverse.each do |ticket| %>
-					<li class=" list-group-item  <%=  'b-success' if ticket.attributes.status == 'open' %> <%=  'b-warning' if ticket.attributes.status == 'pending'   %>  <%=  'b-danger' if ticket.attributes.status == 'new'   %> <%=  'b-info' if ticket.attributes.status == 'solved'   %> ">
-						<div class="row">
-							<div class="col-xs-9">
-								<%= ticket.attributes.raw_subject %>
-								<%= ticket.attributes.updated_at %>
-							</div>
-						</div>
-					</li>
-					<%end%>
-				</ul>
+			<div class="col-xs-3 panel panel-default padding-tickets " style=" width:33%; margin-left:20px;">
+				<%= erb :'panel/tikets'%>
 			</div>
 			<!--Facebook-->
-			<div class="col-xs-3 panel panel-default padding-facebook " style=" margin-left:20px; width:468px; height:430px;">
-				<p class="color-panel-fb ">
-					<img src="../img/FB-f-Logo__blue_72.png" class="logo-facebook" alt="facebook">
-					<b>Publicaciones</b>
-				</p>
-				<div class="fb-like-box"  data-href="https://www.facebook.com/Cursameoficial" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+			<div class="col-xs-2 panel panel-default padding-facebook " style=" margin-left:20px; width:35%; height:430px;">
+				<%= erb :'panel/facebook'%>
 			</div>
 			<!--Twitter-->
-			<div class="col-xs-4 panel panel-default padding-twitter" style=" width:468px; height:430px; margin-left:20px;">
-				<div class="margin-twitter">
-					<a class="twitter-timeline" href="https://twitter.com/search?q=cursame" data-widget-id="574989712751919104" data-chrome="nofooter transparent" >@cursame</a>
-				</div>
+			<div class="col-xs-3 panel panel-default padding-twitter" style="width:25%;  height:430px; margin-left:20px;">
+				<%= erb :'panel/twitter'%>
 			</div>
 			<!--Panel graph-->
 			<div class="col-xs-12 panel panel-default  padding-graph" style="margin-left:20px;">
@@ -64,12 +51,12 @@
 					<img src="../img/logins.png" class="img-login" alt="graph">
 					<b>Logins</b>
 				</p>
-				<div id="chartx" ></div>
-				
+				<div id="chartx" style="width:90%"></div>
 			</div>
 		</div>
 	</body>
 </html>
+<%= erb :'panel/form_check'%>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
@@ -81,4 +68,10 @@ $(function () {
 TimeChart(<%= @single_date %>, <%=@mix%>, 'chartx');
 });
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+$(document).ready(function(){
+	setTimeout(function(){ 
+		$('#notice').hide();
+ }, 6000);
+});
+
 </script>

@@ -36,6 +36,8 @@ GEM
     multipart-post (2.0.0)
     pg (0.18.1)
     rack (1.6.0)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -58,6 +60,8 @@ GEM
     sinatra-activerecord (2.0.6)
       activerecord (>= 3.2)
       sinatra (~> 1.0)
+    sinatra-redirect-with-flash (0.2.1)
+      sinatra (>= 1.0.0)
     sqlite3 (1.3.10)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -88,10 +92,12 @@ DEPENDENCIES
   json
   mixpanel_client
   pg
+  rack-flash3
   rake
   shotgun
   sinatra (~> 1.4.5)
   sinatra-activerecord
+  sinatra-redirect-with-flash
   sqlite3
   tux
   zendesk_api

@@ -3,6 +3,8 @@
 puts "home controller"
 get '/' do 
 
+  @notice = session[:notice]
+
   puts '#################################################################'
   puts 'Load pannel from cursame'
   puts '#################################################################'

@@ -11,6 +11,8 @@ gem 'haml'
 gem 'activerecord', '~> 4.2.1'
 gem "sinatra-activerecord"
 gem "rake"
+gem 'rack-flash3'
+gem 'sinatra-redirect-with-flash'
 
 group :development do
  gem 'sqlite3'

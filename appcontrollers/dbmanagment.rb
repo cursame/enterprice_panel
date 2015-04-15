@@ -16,7 +16,7 @@ require './appcontrollers/dbmethods/users_controller'
 
 ####### methodos de chequeo #########
 
-class CheckIns < ActiveRecord::Base
+class CheckIn < ActiveRecord::Base
 end
 
 require './appcontrollers/dbmethods/check_ins_controller'
