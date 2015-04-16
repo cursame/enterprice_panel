@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	def works_delay
 		i = 0
 		self.check_ins.each do |check|
-			if check.hour.to_i > 10 && check.hourmin.to_i < 1015
+			if check.hour.to_i > 10 && check.hourmin.to_i < 1018
                i = i + 1
 			end
 		end
@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
     	i = 0
 		self.check_ins.each do |check|
 			puts check.hour
-			if check.hourmin.to_i > 1015
+			if check.hourmin.to_i > 1018
                i = i + 1
 			end
 		end
