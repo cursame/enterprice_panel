@@ -11,7 +11,10 @@ end
 configure :production do
 ActiveRecord::Base.establish_connection(
   :adapter     => "postgresql",
-  :database    => "HEROKU_POSTGRESQL_COBALT",
+  :host        => "ec2-107-22-166-233.compute-1.amazonaws.com",
+  :database    => "d1qjvnlkr2nchf",
+  :user        => "xfstixpuqpcziu",
+  :password    => "avJTTKiK7LrBKssND5U-0GCuwK",
   :pool        => 1,
   :timeout     => 5000,
   :port        => 5432,
