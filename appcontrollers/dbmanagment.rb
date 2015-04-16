@@ -1,4 +1,4 @@
-
+configure :development do
 ActiveRecord::Base.establish_connection(
   :adapter     => "sqlite3",
   :database    => "./data.sqlite3",
@@ -7,6 +7,18 @@ ActiveRecord::Base.establish_connection(
   :datetime    => "timestamp with time zone" ,
   :timestamp   => "timestamp with time zone" 
 )
+end
+configure :production do
+ActiveRecord::Base.establish_connection(
+  :adapter     => "postgresql",
+  :database    => "HEROKU_POSTGRESQL_COBALT",
+  :pool        => 1,
+  :timeout     => 5000,
+  :port        => 5432,
+  :datetime    => "timestamp with time zone" ,
+  :timestamp   => "timestamp with time zone" 
+)
+end
 
 ####### methodos de usuarios #######
 
