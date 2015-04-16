@@ -13,6 +13,7 @@ gem "sinatra-activerecord"
 gem "rake"
 gem 'rack-flash3'
 gem 'sinatra-redirect-with-flash'
+gem 'sqlite3'
 
 group :development do
  gem 'sqlite3'
