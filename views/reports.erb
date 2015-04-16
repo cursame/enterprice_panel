@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Reportes por usuario</title>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/highcharts.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/global.css">
+	</head>
+	<body>
+		<div class="bs-callout bs-callout-danger" id="callout-progress-animation-css3">
+			<h4 id="cross-browser-compatibility">Parametrización<a class="anchorjs-link" href="#cross-browser-compatibility"><span class="anchorjs-icon"></span></a></h4>
+			<p>
+				<ul>
+					<li>Los retardos se cuentan de 10:00 a 10:15</li>
+					<li>Las faltas se registra a partir de las 10:15 </li>
+					<li>Tres retardos es una falta </li>
+				</ul>
+			</p>
+		</div>
+		<table class="table">
+			<caption><h2>Reporte de asistencias</h2></caption>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Token</th>
+					<th>Retardos</th>
+					<th>Faltas</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<% @users.each_with_index do |user, index| %>
+					<th scope="row"><%= index %></th>
+					<td><%= user.name %></td>
+					<td><%= user.token_user %></td>
+					<td><%= user.works_delay %></td>
+					<td><%= user.faults %></td>
+					<%end%>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

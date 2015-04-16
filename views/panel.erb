@@ -29,7 +29,11 @@
 						<a class="navbar-brand color-title" href="#"><b>Panel de administación</b></a>
 					</div>
 				</div>
-				<a class="btn btn-success pull-right" style="margin-top:5px;" data-toggle="modal" data-target="#myModal" >Registro de entrada</a>
+				<span class="btn-group pull-right">
+				<a class="btn btn-success" style="margin-top:5px;" data-toggle="modal" data-target="#myModal" >Registro de entrada</a>
+				<a class="btn btn-info" style="margin-top:5px;" data-toggle="modal" data-target="#myModalR" >Registro de usuario</a>
+				</span>
+
 			</div>
 		</nav>
 		<div class="row cols-xs-12">
@@ -57,6 +61,7 @@
 	</body>
 </html>
 <%= erb :'panel/form_check'%>
+<%= erb :'panel/register'%>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
