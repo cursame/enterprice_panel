@@ -11,40 +11,40 @@
 		<link rel="stylesheet" href="../css/global.css">
 	</head>
 	<body style="background:#fff;">
-	    <div class="row col-xs-12">
-		<div class="bs-callout bs-callout-danger" id="callout-progress-animation-css3">
-			<h4 id="cross-browser-compatibility">Parametrización<a class="anchorjs-link" href="#cross-browser-compatibility"><span class="anchorjs-icon"></span></a></h4>
-			<p>
-				<ul>
-					<li>Los retardos se cuentan de 10:00 a 10:15</li>
-					<li>Las faltas se registra a partir de las 10:15 </li>
-					<li>Tres retardos es una falta </li>
-				</ul>
-			</p>
-		</div>
-		<table class="table">
-			<caption><h2>Reporte de asistencias</h2></caption>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Name</th>
-					<th>Token</th>
-					<th>Retardos</th>
-					<th>Faltas</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
+		<div class="row col-xs-12">
+			<div class="bs-callout bs-callout-danger" id="callout-progress-animation-css3">
+				<h4 id="cross-browser-compatibility">Parametrización<a class="anchorjs-link" href="#cross-browser-compatibility"><span class="anchorjs-icon"></span></a></h4>
+				<p>
+					<ul>
+						<li>Los retardos se cuentan de 10:00 a 10:15</li>
+						<li>Las faltas se registra a partir de las 10:15 </li>
+						<li>Tres retardos es una falta </li>
+					</ul>
+				</p>
+			</div>
+			<table class="table">
+				<caption><h2>Reporte de asistencias</h2></caption>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Token</th>
+						<th>Retardos</th>
+						<th>Faltas</th>
+					</tr>
+				</thead>
+				<tbody>
 					<% @users.each_with_index do |user, index| %>
-					<th scope="row"><%= index %></th>
-					<td><%= user.name %></td>
-					<td><%= user.token_user %></td>
-					<td><%= user.works_delay %></td>
-					<td><%= user.faults %></td>
+					<tr>
+						<th scope="row"><%= index %></th>
+						<td><%= user.name %></td>
+						<td><%= user.token_user %></td>
+						<td><%= user.works_delay %></td>
+						<td><%= user.faults %></td>
+					</tr>
 					<%end%>
-				</tr>
-			</tbody>
-		</table>
+				</tbody>
+			</table>
 		</div>
 	</body>
 </html>
